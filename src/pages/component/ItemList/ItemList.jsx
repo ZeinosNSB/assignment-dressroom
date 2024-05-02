@@ -26,11 +26,18 @@ const ItemList = () => {
         data.navPills.map((items, index) => {
           const correspondingTabPanes = data.tabPanes.filter(pane => pane.type === items.type);
           return (
-            <Tab eventKey={items.tabName} title={items.showName}
-                 key={index}>
+            <Tab
+              key={index}
+              eventKey={items.tabName}
+              title={items.showName}
+            >
               <Row className={style.row}>
                 {correspondingTabPanes.map((pane, index) => (
-                  <Col className={style.col} xs={3} key={index}>
+                  <Col
+                    xs={3}
+                    key={index}
+                    className={style.col}
+                  >
                     {CardItem(pane)}
                   </Col>
                 ))}
